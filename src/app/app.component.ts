@@ -8,16 +8,16 @@ import { IPost } from './shared/interfaces';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   posts: IPost [] | undefined;
+   recentPosts: IPost [] | undefined;
 
   constructor(private contentService: ContentService) { 
-    this.fetchPosts();
+    this.fetchRecentPosts();
   }
 
-  fetchPosts(): void{
-    this.posts = undefined;
-    this.contentService.loadTPosts().subscribe(posts=>{
-      this.posts = posts;
+  fetchRecentPosts(): void{
+    this.recentPosts = undefined;
+    this.contentService.loadPosts(5).subscribe(posts=>{
+      this.recentPosts = posts;
     });
   }
 }

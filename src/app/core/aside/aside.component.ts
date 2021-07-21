@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ContentService } from 'src/app/content.service';
-import { ITheme } from 'src/app/shared/interfaces';
+import { IPost } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-aside',
@@ -10,7 +10,7 @@ import { ITheme } from 'src/app/shared/interfaces';
 export class AsideComponent{
 
   @Input() title!: string;
-  @Input() items: ITheme[] | undefined;
+  @Input() items: IPost[] | undefined;
 
   constructor() { }
  
